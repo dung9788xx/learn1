@@ -15,3 +15,6 @@ Route::get('/', function () {
     $a=\App\User::find(1);
         return json_decode($a->message);
 });
+Route::get('/abc', function () {
+    $sendmesage= new \App\Services\ChatWorkService();
+});
