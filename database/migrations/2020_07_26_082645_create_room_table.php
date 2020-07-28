@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsCollection extends Migration
+class CreateRoomTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreatePostsCollection extends Migration
      */
     public function up()
     {
-        Schema::connection('mongodb')->create('posts', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->text('content');
+            $table->text('name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreatePostsCollection extends Migration
      */
     public function down()
     {
-        Schema::connection('mongodb')->dropIfExists('posts');
+        Schema::dropIfExists('rooms');
     }
 }

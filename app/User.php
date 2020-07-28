@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Jenssegers\Mongodb\Auth\User as Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-    protected $connection='mongodb';
-    protected $collection='users';
+    use Notifiable,HasApiTokens;
+    protected $table='users';
     /**
      * The attributes that are mass assignable.
      *
@@ -38,8 +38,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function posts()
+    public function message()
     {
-        return $this->hasMany(Post::class,'user_id');
+        return $this->hasManyThrough(Message::class,Room_User_Table::class,'id','user_id','id','id');
     }
 }

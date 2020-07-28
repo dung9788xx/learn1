@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return \App\User::with('posts')->get();
+    $a=\App\User::find(1);
+        return json_decode($a->message);
 });
