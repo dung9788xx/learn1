@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    $a=\App\User::find(1);
-        return json_decode($a->message);
+    $a=\App\User::find(38);
+        return dd($a->rooms->toArray());
 });
 Route::get('/abc', function () {
     $sendmesage= new \App\Services\ChatWorkService();

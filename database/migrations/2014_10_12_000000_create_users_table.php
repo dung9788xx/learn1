@@ -31,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::connection('mongodb')->dropIfExists('users');
+        Schema::dropIfExists('users');
     }
 }

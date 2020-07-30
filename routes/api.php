@@ -13,16 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 Route::post('/login','LoginController@main');
-Route::group(['middleware' => ['auth:api']], function () {
-    Route::get('/abc', function () {
-        return 'abc';
-    });
+Route::group(['middleware' => ['auth:api']],function (){
+    Route::get('/rooms', 'RoomController@index');
+    Route::post('/rooms/messages','RoomController@message');
 });
 
-Route::get('/a', function () {
-    return Auth::user();
-})->middleware('auth:api');

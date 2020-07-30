@@ -22,7 +22,10 @@ class LoginController extends Controller
             $token=$user->createToken('login')->accessToken;
             return response()->json([
                 'code' => 200,
-                'message' => $token
+                'data' => [
+                    'access_token' => $token,
+                    'user' => $user
+                ]
             ]);
         }
         return response()->json([

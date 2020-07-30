@@ -38,8 +38,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function message()
+
+    public function rooms()
     {
-        return $this->hasManyThrough(Message::class,Room_User_Table::class,'id','user_id','id','id');
+        return $this->hasManyThrough(Room::class,Room_User_Table::class,'user_id','id','','room_id');
     }
 }
