@@ -14,8 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::post('/login','LoginController@main');
-Route::group(['middleware' => ['auth:api']],function (){
-    Route::get('/rooms', 'RoomController@index');
-    Route::post('/rooms/messages','RoomController@message');
-});
-
+Route::get('/list-product-category','ListProductCategoryController@main');

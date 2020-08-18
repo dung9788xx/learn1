@@ -23,5 +23,11 @@ Route::get('/', function () {
     echo "abc";
 });
 Route::get('/abc', function () {
-    $sendmesage= new \App\Services\ChatWorkService();
+//    for($i=0;$i<5;$i++){
+//        \App\Jobs\SendMailJob::dispatch($i);
+//    }
+//    $second=1596503968;
+    $now=1596504193;
+    echo \Carbon\Carbon::now()->toDateTimeString();
+  //  echo date("d/m/Y H:i:s", $now);
 });
