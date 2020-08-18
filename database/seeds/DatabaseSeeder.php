@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(UserCollectionSeeder::class);
+        \App\ProductCategory::create(['name'=>'Quần áo nam','priority'=>1]);
+        \App\ProductCategory::create(['name'=>'Quần áo nữ','priority'=>2]);
+        \App\ProductCategory::create(['name'=>'Giày nam','priority'=>3]);
+        \App\ProductCategory::create(['name'=>'Giày nữ','priority'=>4]);
+//         $this->call(UserCollectionSeeder::class);
     }
 }
