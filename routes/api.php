@@ -15,3 +15,4 @@ use Illuminate\Http\Request;
 
 Route::post('/login','LoginController@main');
 Route::get('/list-product-category','ListProductCategoryController@main');
+Route::get('/product-by-category','GetProductByCategoryController@main');
