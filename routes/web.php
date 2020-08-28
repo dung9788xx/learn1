@@ -20,7 +20,7 @@ Route::get('/', function () {
 //      echo  $remap[$c['id']]['max'];
 //    }
 //    dd($b);
-    echo "abc";
+    dd('ac');
 });
 Route::get('/abc', function () {
 //    for($i=0;$i<5;$i++){
